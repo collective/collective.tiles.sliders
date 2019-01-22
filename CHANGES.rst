@@ -5,7 +5,14 @@ Changelog
 0.5 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Minimal contained buildut overhaul.
+  [jensens]
+
+- Compile Resources in order to make it work with Plone 5.1.4.
+  [jensens]
+
+- Fix dependency chain in `metadata.xml`.
+  [jensens]
 
 
 0.4 (2017-12-01)

@@ -26,7 +26,7 @@
     <value key="enabled">True</value>
     <value key="jscompilation">++plone++collectivetilessliders/collectivetilessliders-compiled.min.js</value>
     <value key="csscompilation"></value>
-    <value key="last_compilation">2017-12-01 10:00:00</value>
+    <value key="last_compilation">2019-01-22 14:05:00</value>
 
     <!-- so we don't include these modules multiple times -->
     <value key="stub_js_modules">
