@@ -5,6 +5,9 @@ Changelog
 0.5 (unreleased)
 ----------------
 
+- fixed reinstall of mosaic and other dependency-roundtrips.
+  [iham]
+
 - Minimal contained buildut overhaul.
   [jensens]
 

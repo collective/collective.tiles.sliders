@@ -39,17 +39,17 @@
   <!-- GenericSetup utilities. -->
   <!-- ======================= -->
   <utility
-      zcml:condition="not-installed plone.app.mosaic"
-      factory=".setuphandlers.HiddenMosaicProfiles"
-      name="collective.tiles.sliders-hiddenprofiles"
+      factory=".setuphandlers.HiddenProfiles"
+      name="collective.tiles.sliders"
+      provides="Products.CMFPlone.interfaces.INonInstallable"
       />
 
-  <utility
+<!--   <utility
       zcml:condition="installed plone.app.mosaic"
       factory=".setuphandlers.HiddenTileProfiles"
       name="collective.tiles.sliders-hiddenprofiles"
       />
-
+ -->
 
 <!--   <subscriber
       handler=".setuphandlers.handle_profile_imported_event"
