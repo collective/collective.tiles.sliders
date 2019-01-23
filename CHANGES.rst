@@ -17,6 +17,9 @@ Changelog
 - Fix dependency chain in `metadata.xml`.
   [jensens]
 
+- On uninstall remove values from registry.
+  [jensens]
+
 
 0.4 (2017-12-01)
 ----------------
