@@ -5,19 +5,16 @@ Changelog
 0.5 (unreleased)
 ----------------
 
-- fixed reinstall of mosaic and other dependency-roundtrips.
-  [iham]
+- Fixed dependency chain in `metadata.xml` and reinstall of mosaic and other dependency-roundtrips.
+  [iham, jensens]
 
-- Minimal contained buildut overhaul.
+- On uninstall remove values from registry.
+  [jensens]
+
+- Minimal contained buildout overhaul.
   [jensens]
 
 - Compile Resources in order to make it work with Plone 5.1.4.
-  [jensens]
-
-- Fix dependency chain in `metadata.xml`.
-  [jensens]
-
-- On uninstall remove values from registry.
   [jensens]
 
 

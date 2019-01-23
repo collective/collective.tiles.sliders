@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Post install import steps for collective.tiles.sliders."""
-from collective.tiles.sliders import config
+from collective.tiles.sliders.config import NON_INSTALLABLE_PROFILES
 from Products.CMFPlone.interfaces import INonInstallable
 from zope.interface import implementer
 
@@ -11,15 +11,4 @@ class HiddenProfiles(object):
 
     def getNonInstallableProfiles(self):
         """Hide uninstall profile from site-creation and quickinstaller."""
-        return [
-            config.UNINSTALL_PROFILE,
-        ]
-
-
-def post_install(context):
-    """Post install script"""
-
-
-def uninstall(context):
-    """Uninstall script"""
-    # Do something at the end of the uninstallation of this package.
+        return NON_INSTALLABLE_PROFILES
