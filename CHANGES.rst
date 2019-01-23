@@ -5,6 +5,9 @@ Changelog
 0.5 (unreleased)
 ----------------
 
+- add and setup extra `[mosaic]` to pull in mosaic in one go.
+  [jensens]
+
 - Fixed dependency chain in `metadata.xml` and reinstall of mosaic and other dependency-roundtrips.
   [iham, jensens]
 

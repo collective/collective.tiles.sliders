@@ -59,6 +59,9 @@ setup(
     install_requires=install_requires,
     extras_require={
         'testfixture': testfixture_requires,
+        'mosaic': [
+            'plone.app.mosaic',
+        ],
         'test': [
             'plone.app.mosaic',
             'plone.app.robotframework[debug]',

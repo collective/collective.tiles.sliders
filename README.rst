@@ -59,6 +59,11 @@ Install collective.tiles.sliders by adding it to your buildout::
     eggs =
         collective.tiles.sliders
 
+or pull in mosaic::
+
+    eggs =
+        collective.tiles.sliders[mosaic]
+
 
 and then running ``bin/buildout``
 
