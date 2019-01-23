@@ -1,5 +1,6 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="collective.tiles.sliders">
 
@@ -38,12 +39,20 @@
   <!-- GenericSetup utilities. -->
   <!-- ======================= -->
   <utility
-      factory=".setuphandlers.HiddenProfiles"
+      zcml:condition="not-installed plone.app.mosaic"
+      factory=".setuphandlers.HiddenMosaicProfiles"
       name="collective.tiles.sliders-hiddenprofiles"
       />
 
-  <subscriber
-      handler=".setuphandlers.handle_profile_imported_event"
+  <utility
+      zcml:condition="installed plone.app.mosaic"
+      factory=".setuphandlers.HiddenTileProfiles"
+      name="collective.tiles.sliders-hiddenprofiles"
       />
 
+
+<!--   <subscriber
+      handler=".setuphandlers.handle_profile_imported_event"
+      />
+ -->
 </configure>

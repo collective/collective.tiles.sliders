@@ -10,7 +10,7 @@ from zope.interface import implementer
 
 
 @implementer(INonInstallable)
-class HiddenProfiles(object):
+class HiddenMosaicProfiles(object):
     """Define hidden GS profiles."""
 
     def getNonInstallableProfiles(self):
@@ -21,15 +21,19 @@ class HiddenProfiles(object):
         ]
 
 
+@implementer(INonInstallable)
+class HiddenTileProfiles(object):
+    """Define hidden GS profiles."""
+
+    def getNonInstallableProfiles(self):
+        """Hide uninstall profile from site-creation and quickinstaller."""
+        return [
+            config.INSTALL_PROFILE,
+            config.UNINSTALL_PROFILE,
+        ]
+
 def post_install(context):
     """Post install script"""
-    portal_quickinstaller = api.portal.get_tool('portal_quickinstaller')
-    if not portal_quickinstaller.isProductInstalled('plone.app.mosaic'):
-        # skip if mosaic isn't installed
-        return
-    mosaic_profile = 'collective.tiles.sliders:mosaic_support'
-    setup_tool = api.portal.get_tool('portal_setup')
-    setup_tool.runImportStepFromProfile(mosaic_profile, 'plone.app.registry')
 
 
 def uninstall(context):
@@ -37,14 +41,14 @@ def uninstall(context):
     # Do something at the end of the uninstallation of this package.
 
 
-@adapter(IProfileImportedEvent)
-def handle_profile_imported_event(event):
-    """Update 'last version for profile' after a full import."""
-    qi = api.portal.get_tool(name='portal_quickinstaller')
-    setup = api.portal.get_tool(name='portal_setup')
+# @adapter(IProfileImportedEvent)
+# def handle_profile_imported_event(event):
+#     """Update 'last version for profile' after a full import."""
+#     qi = api.portal.get_tool(name='portal_quickinstaller')
+#     setup = api.portal.get_tool(name='portal_setup')
 
-    if not qi.isProductInstalled(config.PROJECT_NAME):
-        return
+#     if not qi.isProductInstalled(config.PROJECT_NAME):
+#         return
 
-    if event.profile_id == 'profile-plone.app.mosaic:default':
-        setup.runAllImportStepsFromProfile(config.MOSAIC_SUPPORT_PROFILE)
+#     if event.profile_id == 'profile-plone.app.mosaic:default':
+#         setup.runAllImportStepsFromProfile(config.MOSAIC_SUPPORT_PROFILE)
