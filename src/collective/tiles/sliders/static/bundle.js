@@ -1,5 +1,5 @@
 require([
-  'ctsliders-dynamicform'
+  'collective.tiles.sliders.dynamicform'
 ], function() {
   'use strict';
 });

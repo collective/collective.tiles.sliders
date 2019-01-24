@@ -5,6 +5,9 @@ Changelog
 0.5 (unreleased)
 ----------------
 
+- refactored dynamic form resources and bundling.
+  [iham]
+
 - add and setup extra `[mosaic]` to pull in mosaic in one go.
   [jensens]
 

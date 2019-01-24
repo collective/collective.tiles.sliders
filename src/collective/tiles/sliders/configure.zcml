@@ -19,7 +19,7 @@
   <plone:static
       directory="static"
       type="plone"
-      name="collectivetilessliders"
+      name="collective.tiles.sliders.dynamicform"
       />
 
 </configure>

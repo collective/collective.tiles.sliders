@@ -7,17 +7,17 @@
   </record>
   <records
       interface="Products.CMFPlone.interfaces.IResourceRegistry"
-      prefix="plone.resources/ctsliders-dynamicform"
+      prefix="plone.resources/collective.tiles.sliders.dynamicform"
       remove="true"
   />
   <records
       interface="Products.CMFPlone.interfaces.IResourceRegistry"
-      prefix="plone.resources/bundle-ctsliders"
+      prefix="plone.resources/collective.tiles.sliders.dynamicform.bundle"
       remove="true"
   />
   <records
       interface="Products.CMFPlone.interfaces.IBundleRegistry"
-      prefix="plone.bundles/ctsliders"
+      prefix="plone.bundles/collective.tiles.sliders.dynamicform"
       remove="true"
   />
   <records
