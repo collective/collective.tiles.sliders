@@ -5,6 +5,12 @@ Changelog
 0.5 (unreleased)
 ----------------
 
+- made responsive slides a pattern itself.
+  [iham]
+
+- refactored responsive slides to become resource & bundle
+  [iham]
+
 - refactored dynamic form resources and bundling.
   [iham]
 
