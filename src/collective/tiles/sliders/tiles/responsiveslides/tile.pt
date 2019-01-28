@@ -1,4 +1,5 @@
-<tal:def tal:define="images view/images | nothing;">
+<html tal:define="images view/images | nothing;">
+<body>
 <tal:slider tal:condition="images">
   <tal:def define="
       image_scale view/data/image_scale | string: large;
@@ -11,23 +12,27 @@
   <div class="slider ${fullscreen}">
     <div class="rslides_container">
       <ul class="rslides centered-btns centered-btns1 pat-responsiveslides"
-          data-pat-responsiveslides="auto: ${autostart}; pager: ${pager}; nav: ${navigation}; speed: ${view/data/animation_speed}; timeout: ${view/data/slideshow_speed}; namespace: ${view/data/namespace}"
-        >
-        <tal:repeat  tal:repeat="item images">
-          <li tal:define="description item/description | None;">
-            <a href="" tal:define="link item/link | nothing" tal:omit-tag="not: link" tal:attributes="href link">
-              <img src="" alt=""
-                  tal:attributes="
-                    alt description;
-                    src python: item.get(image_scale);
-              " />
+          data-pat-responsiveslides="auto: ${autostart}; pager: ${pager}; nav: ${navigation}; speed: ${view/data/animation_speed}; timeout: ${view/data/slideshow_speed}; namespace: ${view/data/namespace}">
+        <li tal:repeat="item images">
+          <tal:def define="
+              description item/description | nothing;
+              show_caption python: show_captions and description;
+              link item/link | nothing;
+              ">
+            <a href="${link}" tal:omit-tag="not: link">
+            <figure tal:omit-tag="not: show_caption">
+              <img tal:replace="structure python: scaled_image.tag()" />
+              <figcaption
+                  tal:condition="show_caption"
+                  tal:content="description">Description</figcaption>
+            </figure>
             </a>
-            <p class="caption" tal:condition="python: show_captions and description" tal:content="description"></p>
-          </li>
-        </tal:repeat>
+          </tal:def>
+      </li>
       </ul>
     </div>
   </div>
-</tal:def>
+  </tal:def>
 </tal:slider>
-</tal:def>
+</body>
+</html>

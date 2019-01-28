@@ -28,11 +28,11 @@
     <value key="resources">
       <element>collective.tiles.sliders.responsiveslides</element>
     </value>
-    <!-- <value key="merge_with"></value> -->
+    <value key="merge_with">default</value>
     <value key="enabled">True</value>
     <value key="jscompilation">++plone++collective.tiles.sliders.responsiveslides/compiled.min.js</value>
     <value key="csscompilation">++plone++collective.tiles.sliders.responsiveslides/compiled.css</value>
-    <value key="last_compilation">2019-01-24 11:30:00</value>
+    <value key="last_compilation">2019-01-28 11:30:00</value>
     <value key="stub_js_modules">
       <element>jquery</element>
       <element>pat-base</element>
@@ -53,12 +53,10 @@
       <element>collective.tiles.sliders.dynamicform</element>
     </value>
     <value key="merge_with">logged-in</value>
-    <!-- <value key="depends">plone-logged-in</value> -->
     <value key="enabled">True</value>
-    <!-- <value key="expression">python: member is not None</value> -->
     <value key="jscompilation">++plone++collective.tiles.sliders.dynamicform/compiled.min.js</value>
     <value key="csscompilation"></value>
-    <value key="last_compilation">2019-01-24 11:30:00</value>
+    <value key="last_compilation">2019-01-28 11:30:00</value>
     <value key="stub_js_modules">
       <element>jquery</element>
       <element>pat-base</element>
