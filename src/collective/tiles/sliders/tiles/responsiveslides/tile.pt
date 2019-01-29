@@ -13,15 +13,16 @@
     <div class="rslides_container">
       <ul class="rslides centered-btns centered-btns1 pat-responsiveslides"
           data-pat-responsiveslides="auto: ${autostart}; pager: ${pager}; nav: ${navigation}; speed: ${view/data/animation_speed}; timeout: ${view/data/slideshow_speed}; namespace: ${view/data/namespace}">
-        <li tal:repeat="item images">
+        <li tal:repeat="image images">
           <tal:def define="
-              description item/description | nothing;
+              description image/description | nothing;
               show_caption python: show_captions and description;
-              link item/link | nothing;
+              link image/link | nothing;
+              image_src python:image.get(image_scale);
               ">
             <a href="${link}" tal:omit-tag="not: link">
             <figure tal:omit-tag="not: show_caption">
-              <img tal:replace="structure python: scaled_image.tag()" />
+              <img src="${image_src}" alt="${description}" />
               <figcaption
                   tal:condition="show_caption"
                   tal:content="description">Description</figcaption>
