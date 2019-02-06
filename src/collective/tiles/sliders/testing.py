@@ -1,50 +1,51 @@
 # -*- coding: utf-8 -*-
-"""Test Layer for collective.tiles.sliders."""
-
 from plone.app.contenttypes.testing import PLONE_APP_CONTENTTYPES_FIXTURE
 from plone.app.robotframework.testing import REMOTE_LIBRARY_BUNDLE_FIXTURE
 from plone.app.testing import applyProfile
 from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
 from plone.app.testing import PloneSandboxLayer
-from plone.testing import Layer
 from plone.testing import z2
 
+import collective.tiles.sliders
+import plone.app.mosaic
 
-class Fixture(PloneSandboxLayer):
-    """Custom Test Layer for collective.tiles.sliders."""
+
+class CollectiveTilesSlidersLayer(PloneSandboxLayer):
 
     defaultBases = (PLONE_APP_CONTENTTYPES_FIXTURE,)
 
     def setUpZope(self, app, configurationContext):
-        """Set up Zope for testing."""
-        # Load ZCML
-        import plone.app.mosaic
+        # Load any other ZCML that is required for your tests.
+        # The z3c.autoinclude feature is disabled in the Plone fixture base
+        # layer.
         self.loadZCML(package=plone.app.mosaic)
-        import collective.tiles.sliders
         self.loadZCML(package=collective.tiles.sliders)
 
     def setUpPloneSite(self, portal):
         applyProfile(portal, 'plone.app.mosaic:default')
         applyProfile(portal, 'collective.tiles.sliders:default')
 
+COLLECTIVETILESSLIDERS_FIXTURE = CollectiveTilesSlidersLayer()
 
-FIXTURE = Fixture()
 
-INTEGRATION_TESTING = IntegrationTesting(
-    bases=(FIXTURE, ),
-    name='collective.tiles.sliders:Integration',
-)
-
-FUNCTIONAL_TESTING = FunctionalTesting(
-    bases=(FIXTURE, z2.ZSERVER_FIXTURE),
-    name='collective.tiles.sliders:Functional',
+COLLECTIVETILESSLIDERS_INTEGRATION_TESTING = IntegrationTesting(
+    bases=(COLLECTIVETILESSLIDERS_FIXTURE,),
+    name='CollectiveTilesSlidersLayer:IntegrationTesting',
 )
 
 
-ACCEPTANCE_TESTING = FunctionalTesting(
-    bases=(FIXTURE, REMOTE_LIBRARY_BUNDLE_FIXTURE, z2.ZSERVER_FIXTURE),
-    name='collective.tiles.sliders:Acceptance',
+COLLECTIVETILESSLIDERS_FUNCTIONAL_TESTING = FunctionalTesting(
+    bases=(COLLECTIVETILESSLIDERS_FIXTURE,),
+    name='CollectiveTilesSlidersLayer:FunctionalTesting',
 )
 
-ROBOT_TESTING = Layer(name='collective.tiles.sliders:Robot')
+
+COLLECTIVETILESSLIDERS_ACCEPTANCE_TESTING = FunctionalTesting(
+    bases=(
+        COLLECTIVETILESSLIDERS_FIXTURE,
+        REMOTE_LIBRARY_BUNDLE_FIXTURE,
+        z2.ZSERVER_FIXTURE,
+    ),
+    name='CollectiveTilesSlidersLayer:AcceptanceTesting',
+)

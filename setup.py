@@ -63,10 +63,11 @@ setup(
             'plone.app.mosaic',
         ],
         'test': [
-            'plone.app.mosaic',
-            'plone.app.robotframework[debug]',
             'plone.app.testing',
+            'plone.testing',
+            'plone.app.robotframework[debug]',
             'robotframework-selenium2screenshots',
+            'plone.app.mosaic',
         ],
     },
     entry_points="""

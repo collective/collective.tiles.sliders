@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Test UI with robot framework."""
-
-from collective.tiles.sliders import testing
-from plone import api
+from plone.app.testing import ROBOT_TEST_LEVEL
 from plone.testing import layered
+from collective.tiles.sliders.testing import COLLECTIVETILESSLIDERS_ACCEPTANCE_TESTING
 
 import os
 import robotsuite
@@ -11,25 +9,20 @@ import unittest
 
 
 def test_suite():
-    """Create the robot test suite."""
     suite = unittest.TestSuite()
-    no_robot = 'NO_ROBOT' in os.environ.keys()
-    if no_robot or api.env.plone_version() < '4.2':
-        # No robot tests for Plone 4.1.x
-        return suite
-
     current_dir = os.path.abspath(os.path.dirname(__file__))
     robot_dir = os.path.join(current_dir, 'robot')
     robot_tests = [
-        os.path.join('robot', doc)
-        for doc in os.listdir(robot_dir)
-        if doc.startswith('test') and doc.endswith('.robot')
+        os.path.join('robot', doc) for doc in os.listdir(robot_dir)
+        if doc.endswith('.robot') and doc.startswith('test_')
     ]
-    for test in robot_tests:
+    for robot_test in robot_tests:
+        robottestsuite = robotsuite.RobotTestSuite(robot_test)
+        robottestsuite.level = ROBOT_TEST_LEVEL
         suite.addTests([
             layered(
-                robotsuite.RobotTestSuite(test),
-                layer=testing.ROBOT_TESTING,
+                robottestsuite,
+                layer=COLLECTIVETILESSLIDERS_ACCEPTANCE_TESTING,
             ),
         ])
     return suite

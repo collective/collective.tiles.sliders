@@ -1,12 +1,11 @@
-*** Settings ***
-
+*** Settings *****************************************************************
 Resource  keywords.robot
 
-Suite Setup  Setup
-Suite Teardown  Teardown
+Test Setup  Open test browser
+Test Teardown  Close all browsers
 
 
-*** Test cases ***
+*** Test Cases ***************************************************************
 
 Show how to activate the add-on
     Enable autologin as  Manager

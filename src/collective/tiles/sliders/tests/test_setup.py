@@ -2,7 +2,7 @@
 """Test Setup of collective.tiles.sliders."""
 
 from collective.tiles.sliders import config
-from collective.tiles.sliders.testing import INTEGRATION_TESTING
+from collective.tiles.sliders.testing import COLLECTIVETILESSLIDERS_INTEGRATION_TESTING
 from plone import api
 from plone.browserlayer.utils import registered_layers
 
@@ -12,13 +12,12 @@ import unittest
 class TestSetup(unittest.TestCase):
     """Validate setup process for collective.tiles.sliders."""
 
-    layer = INTEGRATION_TESTING
+    layer = COLLECTIVETILESSLIDERS_INTEGRATION_TESTING
 
     def setUp(self):
         """Custom shared utility setup for tests."""
         self.portal = self.layer['portal']
         self.installer = api.portal.get_tool('portal_quickinstaller')
-        import pdb; pdb.set_trace()
 
     def test_product_installed(self):
         """Validate that our product is installed."""
@@ -35,7 +34,7 @@ class TestSetup(unittest.TestCase):
 class TestUninstall(unittest.TestCase):
     """Validate uninstall process for plonetheme.barcelonetang."""
 
-    layer = INTEGRATION_TESTING
+    layer = COLLECTIVETILESSLIDERS_INTEGRATION_TESTING
 
     def setUp(self):
         """Custom shared utility setup for tests."""
