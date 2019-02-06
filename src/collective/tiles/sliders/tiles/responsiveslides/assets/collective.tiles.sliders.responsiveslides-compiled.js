@@ -51,5 +51,5 @@ require([
 
 });
 
-define("/Users/mhilbert/Sandbox/GitHub/collective.tiles.sliders/src/collective/tiles/sliders/tiles/responsiveslides/assets/pattern.js", function(){});
+define("/Users/iham/sandbox/plone/collective.tiles.sliders/src/collective/tiles/sliders/tiles/responsiveslides/assets/pattern.js", function(){});
 

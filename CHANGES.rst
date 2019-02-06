@@ -5,6 +5,9 @@ Changelog
 0.5 (unreleased)
 ----------------
 
+- removed css hacks as the break css validation and ie6/7 are of no importants anymore.
+  [iham]
+
 - made responsive slides a pattern itself.
   [iham]
 

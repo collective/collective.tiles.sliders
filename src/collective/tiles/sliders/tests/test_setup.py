@@ -18,6 +18,7 @@ class TestSetup(unittest.TestCase):
         """Custom shared utility setup for tests."""
         self.portal = self.layer['portal']
         self.installer = api.portal.get_tool('portal_quickinstaller')
+        import pdb; pdb.set_trace()
 
     def test_product_installed(self):
         """Validate that our product is installed."""
