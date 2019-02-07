@@ -5,7 +5,7 @@ from setuptools import setup
 
 setup(
     name='collective.tiles.sliders',
-    version='0.5.dev0',
+    version='1.0.0',
     description='A collection of slider tiles for Mosaic.',
     long_description='\n\n'.join([
         open('README.rst').read(),
@@ -17,7 +17,6 @@ setup(
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
         'Framework :: Plone',
-        'Framework :: Plone :: 5.0',
         'Framework :: Plone :: 5.1',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: GNU General Public License v2 (GPLv2)',

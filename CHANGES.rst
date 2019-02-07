@@ -2,8 +2,11 @@ Changelog
 =========
 
 
-0.5 (unreleased)
-----------------
+1.0.0 (unreleased)
+------------------
+
+- changed to version 1.0.0 as this release is no more backwards compatible.
+  [iham]
 
 - fixed robot tests for Plone 5.1.x
   [iham]
