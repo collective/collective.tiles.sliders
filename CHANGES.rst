@@ -5,6 +5,9 @@ Changelog
 0.5 (unreleased)
 ----------------
 
+- fixed robot tests for Plone 5.1.x
+  [iham]
+
 - removed css hacks as the break css validation and ie6/7 are of no importants anymore.
   [iham]
 
