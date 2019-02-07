@@ -31,6 +31,3 @@ after_success:
   - bin/createcoverage
   - pip install coveralls
   - coveralls
-notifications:
-  email:
-    - development@it-spir.it
