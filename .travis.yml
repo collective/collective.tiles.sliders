@@ -8,7 +8,6 @@ cache:
   - eggs
   - downloads
 env:
-  - PLONE_VERSION=5.0
   - PLONE_VERSION=5.1
 matrix:
   fast_finish: true
