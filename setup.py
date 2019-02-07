@@ -5,7 +5,7 @@ from setuptools import setup
 
 setup(
     name='collective.tiles.sliders',
-    version='1.0.0',
+    version='1.0.1.dev0',
     description='A collection of slider tiles for Mosaic.',
     long_description='\n\n'.join([
         open('README.rst').read(),
