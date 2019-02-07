@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0.0 (unreleased)
+1.0.0 (2019-02-07)
 ------------------
 
 - changed to version 1.0.0 as this release is no more backwards compatible.
