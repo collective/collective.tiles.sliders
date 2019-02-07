@@ -1,10 +1,7 @@
-/* global define */
-
-define([
+require([
   'jquery',
-  'mockup-patterns-base',
-  'mockup-utils'
-], function($, Base, utils) {
+  'pat-base'
+], function($, Base) {
   'use strict';
 
   var FormPattern = Base.extend({
@@ -58,6 +55,7 @@ define([
       return $('div[id$="-content"],div[id$="-images"]', this.$form);
     },
   });
+
   return FormPattern;
 
 });

@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
+from collective.tiles.sliders import config
 from plone.app.upgrade.utils import loadMigrationProfile
 
 
 def reload_gs_profile(context):
-    loadMigrationProfile(
-        context,
-        'profile-collective.tiles.sliders:default',
-    )
+    if config.HAS_MOSAIC:
+        loadMigrationProfile(context, config.BASE_PROFILE)
+    else:
+        loadMigrationProfile(context, config.INSTALL_PROFILE)

@@ -1,38 +1,17 @@
 # -*- coding: utf-8 -*-
 """Installer for the collective.tiles.sliders package."""
-
 from setuptools import find_packages
 from setuptools import setup
 
-
-version = '0.5.dev0'
-description = 'A collection of slider tiles for Mosaic.'
-long_description = '\n\n'.join([
-    open('README.rst').read(),
-    open('CONTRIBUTORS.rst').read(),
-    open('CHANGES.rst').read(),
-])
-
-install_requires = [
-    'setuptools',
-    # -*- Extra requirements: -*-
-    'Products.GenericSetup>=1.8.2',
-    'plone.api',
-    'plone.app.tiles',
-    'plone.tiles',
-],
-
-testfixture_requires = [
-    'plone.app.mosaic',
-    'plone.app.standardtiles',
-]
-
-
 setup(
     name='collective.tiles.sliders',
-    version=version,
-    description=description,
-    long_description=long_description,
+    version='0.5.dev0',
+    description='A collection of slider tiles for Mosaic.',
+    long_description='\n\n'.join([
+        open('README.rst').read(),
+        open('CONTRIBUTORS.rst').read(),
+        open('CHANGES.rst').read(),
+    ]),
     # Get more from https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
         'Development Status :: 4 - Beta',
@@ -56,14 +35,23 @@ setup(
     package_dir={'': 'src'},
     include_package_data=True,
     zip_safe=False,
-    install_requires=install_requires,
+    install_requires=[
+        'setuptools',
+        'Products.GenericSetup>=1.8.2',
+        'plone.api',
+        'plone.app.tiles',
+        'plone.tiles',
+    ],
     extras_require={
-        'testfixture': testfixture_requires,
-        'test': [
+        'mosaic': [
             'plone.app.mosaic',
-            'plone.app.robotframework[debug]',
+        ],
+        'test': [
             'plone.app.testing',
+            'plone.testing',
+            'plone.app.robotframework[debug]',
             'robotframework-selenium2screenshots',
+            'plone.app.mosaic',
         ],
     },
     entry_points="""

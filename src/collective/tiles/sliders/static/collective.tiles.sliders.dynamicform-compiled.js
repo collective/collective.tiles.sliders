@@ -1,10 +1,7 @@
-/* global define */
-
-define('ctsliders-dynamicform',[
+require([
   'jquery',
-  'mockup-patterns-base',
-  'mockup-utils'
-], function($, Base, utils) {
+  'pat-base'
+], function($, Base) {
   'use strict';
 
   var FormPattern = Base.extend({
@@ -58,15 +55,10 @@ define('ctsliders-dynamicform',[
       return $('div[id$="-content"],div[id$="-images"]', this.$form);
     },
   });
+
   return FormPattern;
 
 });
 
-require([
-  'ctsliders-dynamicform'
-], function() {
-  'use strict';
-});
-
-define("/home/jensens/workspace/mod/collective.tiles.sliders/src/collective/tiles/sliders/static/bundle.js", function(){});
+define("/Users/mhilbert/Sandbox/GitHub/collective.tiles.sliders/src/collective/tiles/sliders/static/pattern.js", function(){});
 
