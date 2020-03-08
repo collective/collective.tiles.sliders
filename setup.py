@@ -18,6 +18,7 @@ setup(
         'Environment :: Web Environment',
         'Framework :: Plone',
         'Framework :: Plone :: 5.1',
+        "Framework :: Plone :: Addon",
         'Intended Audience :: Developers',
         'License :: OSI Approved :: GNU General Public License v2 (GPLv2)',
         'Programming Language :: Python',
